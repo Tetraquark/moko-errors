@@ -10,9 +10,9 @@ import com.icerockdev.databinding.ActivityMainBinding
 import com.icerockdev.library.SimpleViewModel
 import com.icerockdev.library.createSimpleViewModel
 import com.icerockdev.library.initExceptionStorage
+import dev.icerock.moko.errors.handler.ExceptionHandler
 import dev.icerock.moko.mvvm.MvvmActivity
 import dev.icerock.moko.mvvm.createViewModelFactory
-import dev.icerock.moko.mvvm.dispatcher.eventsDispatcherOnMain
 
 class MainActivity : MvvmActivity<ActivityMainBinding, SimpleViewModel>() {
 
@@ -38,5 +38,20 @@ class MainActivity : MvvmActivity<ActivityMainBinding, SimpleViewModel>() {
         binding.alertButton.setOnClickListener {
             viewModel.onAlertButtonClick()
         }
+    }
+
+
+    suspend fun testLintCustomRules(exceptionHandler: ExceptionHandler) {
+        val sd = exceptionHandler.handle {
+
+        }
+
+        exceptionHandler.handle {
+
+        }
+
+        exceptionHandler.handle {
+
+        }.execute()
     }
 }

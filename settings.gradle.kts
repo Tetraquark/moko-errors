@@ -3,5 +3,6 @@
  */
 
 include(":errors")
+include(":lint-rules")
 include(":sample:android-app")
 include(":sample:mpp-library")
